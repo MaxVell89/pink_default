@@ -1,25 +1,23 @@
-var gulp = require('gulp'),
-    less = require('gulp-less'),
-    browserSync = require('browser-sync');
+var gulp = require("gulp");
+var less = require("gulp-less");
+var plumber = require("gulp-plumber");
+var server = require("browser-sync");
 
-gulp.task('less', function () {
-  return gulp.src('less/style.less')
+gulp.task("style", function() {
+  gulp.src("less/style.less")
+    .pipe(plumber())
     .pipe(less())
-    .pipe(gulp.dest('css'))
-    .pipe(browserSync.reload({stream: true}))
+    .pipe(gulp.dest("css"))
+    .pipe(server.reload({stream: true}));
 });
 
-gulp.task('browser-sync', function() {
-  browserSync({
-    server: {
-      baseDir: ''
-    },
-    notify: false
+gulp.task("serve", ["style"], function() {
+  server.init({
+    server: "."
   });
-});
 
-gulp.task('watch', ['browser-sync', 'less'], function() {
-  gulp.watch('less/style.less', ['less']);
-  gulp.watch('*.html', browserSync.reload);
-  gulp.watch('js/*js', browserSync.reload);
+gulp.watch("less/**/*.less", ["style"]);
+gulp.watch("*.html")
+  .on("change", server.reload);
+
 });
