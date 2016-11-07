@@ -1,20 +1,74 @@
 .main-header {
-  height: 560px;
-  background-color: @blue-grey;
+  position: relative;;
+  height: 460px;
+  background-color: #2b3848;
   padding: 0;
+  padding-top: 4px;
   color: #fff;
+    &__top {
+      background-color: rgba(0, 0, 0, 0.3);
+      // border-bottom: 1px solid #000;
+    }
     &__wrapper {
       .clearfix();
       .container();
-      height: 70px;
-      border-bottom: 1px solid #000;
+      height: 20px;
+      padding: 20px 0;
     }
     &__logo {
+      background: url(../../img/logo-tablet.png) no-repeat;
+      background-position: -70px -15px;
       float: left;
-      width: 140px;
+      width: 160px;
+      height: 30px;
+      font-size: 26px;
+      text-transform: uppercase;
     }
     &__open-nav {
       float: right;
-      width: 140px;
+      width: 50px;
+      height: 30px;
+      background: url(../../img/menu-burger.png) no-repeat;
     }
+    &__open-nav--open {
+      background: url(../../img/menu-cross.png) no-repeat top right;
+    }
+}
+
+@media (min-width: 700px) {
+  .main-header {
+      height: 730px;
+      &__wrapper {
+        .container(620px);
+        height: 60px;
+      }
+      &__logo {
+        background-position: 0 0;
+        height: 40px;
+      }
+      &__open-nav {
+        margin-top: 10px;
+      }
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-header {
+      height: 860px;
+      &__wrapper {
+        .container(940px);
+        height: 80px;
+      }
+      &__logo {
+        background: url(../../img/logo-desktop.png) no-repeat;
+        height: 40px;
+      }
+      &__open-nav {
+        display: none;
+      }
+      &__nav {
+        float: right;
+        width: 760px;
+      }
+  }
 }

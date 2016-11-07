@@ -11,7 +11,7 @@ gulp.task("style", function() {
     .pipe(server.reload({stream: true}));
 });
 
-gulp.task("serve", ["style"], function() {
+gulp.task("start", ["style"], function() {
   server.init({
     server: "."
   });
@@ -21,3 +21,5 @@ gulp.watch("*.html")
   .on("change", server.reload);
 
 });
+
+gulp.task('default', ['start']);

@@ -1,4 +1,5 @@
 .main-nav {
+  visibility: hidden;
   &__list {
     margin: 0;
     padding: 0;
@@ -16,6 +17,27 @@
         text-decoration: none;
         border-top: 1px solid #485461;
         border-bottom: 1px solid #000;
+        font-size: 18px;
+        line-height: 1.4;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+  }
+}
+
+@media (min-width: 700px) {
+
+}
+
+.main-nav {
+  visibility: visible;
+  &__list {
+
+  }
+  &__item {
+
+      a {
+
       }
   }
 }
