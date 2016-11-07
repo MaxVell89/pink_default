@@ -1,5 +1,10 @@
 .main-nav {
-  visibility: hidden;
+  visibility: visible;
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
   &__list {
     margin: 0;
     padding: 0;
@@ -10,15 +15,15 @@
     width: 100%;
       a {
         display: block;
-        height: 15px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        background-color: #283645;
+        padding-top: 25px;
+        padding-bottom: 25px;
         color: #fff;
         text-decoration: none;
         border-top: 1px solid #485461;
         border-bottom: 1px solid #000;
         font-size: 18px;
-        line-height: 1.4;
+        line-height: 1;
         text-transform: uppercase;
         font-weight: 700;
       }
@@ -26,18 +31,31 @@
 }
 
 @media (min-width: 700px) {
-
+  .main-nav {
+    top: 110px;
+  }
 }
 
-.main-nav {
-  visibility: visible;
-  &__list {
+@media (min-width: 1200px) {
+  .main-nav {
+    visibility: visible;
+    position: static;
+    width: 750px;
+    text-align: right;
+    &__list {
 
-  }
-  &__item {
-
-      a {
-
-      }
+    }
+    &__item {
+      display: inline;
+        a {
+          display: inline;
+          background-color: transparent;
+          margin-right: 80px;
+          border-top: none;
+          border-bottom: none;
+          font-weight: 300;
+          text-transform: none;
+        }
+    }
   }
 }
