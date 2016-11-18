@@ -9,7 +9,7 @@ gulp.task("style", function() {
     .pipe(less())
     .pipe(gulp.dest("css"))
     .pipe(server.reload({stream: true}));
-});
+}); 
 
 gulp.task("start", ["style"], function() {
   server.init({
