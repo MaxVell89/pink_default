@@ -5,7 +5,7 @@
   text-align: center;
 }
 .download__wrapper {
-  .container();
+  .container-fluid();
 }
 .download__title {
   display: none;
@@ -13,18 +13,22 @@
 .download__btn {
   .btn(100%, 30px);
   margin-bottom: 25px;
+  border-radius: 50px;
+}
+.download__platforms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    a {
+      margin: 0 15px;
+    }
 }
 .download__description {
-  padding-top: 75px;
-  background:
-    url(../../img/apple-logo.png) no-repeat 35px 0,
-    url(../../img/android-logo.png) no-repeat center 10px,
-    url(../../img/ms-logo.png) no-repeat 200px 10px;
   font-size: 14px;
   font-weight: 300;
 }
 
-@media (min-width: 700px) {
+@media @tablet {
   .download {
     .container(620px);
     background-color: transparent;
@@ -47,7 +51,6 @@
 
       }
   .download__description {
-    padding-top: 100px;
     font-size: 18px;
       }
 }

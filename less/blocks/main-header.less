@@ -1,19 +1,26 @@
 .main-header {
   position: relative;
   height: 460px;
-  background-color: #2b3848;
+  background-image:  
+    url(../../img/bg-iphone.png),
+    url(../../img/bg-header-mobile.png);
+  background-position: 
+    50% 175px,
+    center top;
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, cover;
   padding: 0;
   padding-top: 4px;
   color: #fff;
 }
 .main-header__top {
   background-color: rgba(0, 0, 0, 0.3);
-  margin-bottom: 250px;
+  margin-bottom: 390px;
   // border-bottom: 1px solid #000;
 }
 .main-header__wrapper {
   .clearfix();
-  .container();
+  .container-fluid();
 
   height: 30px;
   padding: 20px 0;
@@ -32,18 +39,38 @@
   width: 50px;
   height: 30px;
   background: url(../../img/menu-burger.png) no-repeat;
+  border: none;
+  outline: none;
+  display: block;
+  cursor: pointer; 
 }
 .main-header__open-nav--open {
   background: url(../../img/menu-cross.png) no-repeat top right;
 }
+.main-header__nav {
+  visibility: hidden;
+}
+.main-header__nav--open {
+  visibility: visible;
+}
 
-@media (min-width: 700px) {
+// TABLET STYLES 
+
+@media @tablet {
   .main-header {
     height: 730px;
     padding-top: 0;
+    background-image:  
+    url(../../img/bg-iphone.png),
+    url(../../img/bg-header-tablet.png);
+  background-position: 
+    50% 100%,
+    center top;
+  background-repeat: no-repeat, no-repeat;
+  background-size: auto 546px, cover;
   }
   .main-header__wrapper {
-    .container(620px);
+    .container-fluid();
     height: 50px;
     padding-bottom: 40px;
   }
@@ -56,13 +83,17 @@
   }
 }
 
+// DESCTOP STYLE
 
-@media (min-width: 1200px) {
+@media @desktop {
   .main-header {
     height: 860px;
+    background: 
+      url(../../img/bg-iphone.png) no-repeat 100% 100%,
+      url(../../img/bg-header-desktop.png) no-repeat center;
+    background-size: 580px, cover;
   }
   .main-header__wrapper {
-    .container(940px);
     height: 80px;
     padding-top: 30px;
   }
