@@ -1,26 +1,149 @@
 .features {
-	
+	padding-top: 40px;
+	overflow: hidden;
+
+	@media @tablet {
+		padding-top: 50px;
+	}
 }
+
 .features__title {
-	
+	position: relative;
+	padding: 40px 10px 60px;
+
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		border-right: 100vw solid #f2f2f2;
+		border-top: 8vw solid transparent;
+		box-sizing: border-box;
+		z-index: -1;
+	}
 }
+
 .features__title h2 {
+	margin-top: 0;
 	font-size: 24px;
 	font-weight: 300;
 	text-align: center;
+
+	&:last-child {
+		margin-bottom: 40px;
+	}
+
+	@media @tablet {
+		font-size: 40px;
+		margin: 0;
+
+		&:last-child {
+		margin-bottom: 50px;
+		}
+	}
+
+	@media @desktop {
+		font-size: 50px;
+
+		&:last-child {
+			margin-bottom: 70px;
+		}
+	}
 }
+
 .features__list {
+	position: relative;
 	background-color: #f2f2f2;
+	margin-bottom: 50px;
+	padding: 10px 20px 310px;
+	
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 2;
+		width: 100%;
+		height: 280px;
+		background-image: url(../../img/feature-mobile.png);
+		background-repeat: no-repeat;
+		background-position: 50% 100%;
+		background-size: 158px auto;
+	}
+
+	@media @tablet {
+		padding: 5px 6% 30px 50%;
+
+		&::after {
+			left: 6%;
+			width: 100%;
+			height: 480px;
+			background-image: url(../../img/feature-tablet.png);
+			background-position: 0 100%;
+			background-size: 268px auto;
+		}
+	}
+
+	@media @desktop {
+		display: flex;
+		justify-content: space-between;
+		padding: 5px 13% 60px;
+
+		&::after {
+			display: none;
+		}
+	}
 }
+
 .features__item {
 	text-align: center;
 	padding: 0 20px;
+
+	@media @tablet {
+		text-align: left;
+	}
+
+	@media @desktop {
+		text-align: center;
+		max-width: 285px;
+		margin-top: -100px;
+		padding-top: 270px;
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		background-size: 270px auto;
+
+		&--start {
+			background-image: url(../../img/feature-desktop-start.png);
+		}
+
+		&--middle {
+			background-image: url(../../img/feature-desktop-middle.png);
+		}
+
+		&--finish {
+			background-image: url(../../img/feature-desktop-finish.png);
+		}
+	}
 }
+
 .features__item h3 {
 	font-size: 18px;
 	margin-top: 30px;
+
+	@media @desktop {
+		font-size: 30px;
+		font-weight: bold;
+	}
 }
+
 .features__item p {
 	font-size: 14px;
 	line-height: 24px;
+
+	@media @desktop {
+		font-size: 18px;
+	}
 }
