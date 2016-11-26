@@ -1,0 +1,57 @@
+.effect {
+	display: none;
+
+	@media @tablet {
+		display: block;
+		padding: 30px 13% 30px 50%;
+		background-image: url(../../img/effect.png);
+		background-repeat: no-repeat;
+		background-position: 12% 0;
+		background-size: 240px auto;
+		margin-bottom: 20px;
+		min-height: 280px;
+	}
+
+	@media @desktop {
+		display: block;
+		background-color: @light-grey-bg;
+		padding: 30px 13% 30px 40%;
+		background-image: url(../../img/effect-desctop.png);
+		background-position: 17% 0;
+		background-size: 300px auto;
+		padding-top: 90px;
+	}
+}
+
+.effect__title {
+	@media @tablet {
+		font-size: 30px;
+		color: @black;
+		margin: 0;
+	}
+
+	@media @desktop {
+
+	}
+}
+
+.effect__description {
+	@media @tablet {
+		font-size: 14px;
+	}
+
+	@media @desktop {
+		font-size: 18px;
+	}
+}
+
+.effect__link {
+	@media @tablet {
+		font-size: 14px;
+		color: @link;
+	}
+
+	@media @desktop {
+		font-size: 18px;
+	}
+}

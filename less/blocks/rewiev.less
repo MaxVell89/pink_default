@@ -1,0 +1,137 @@
+.rewiev {
+	margin-bottom: 50px;
+}
+
+.rewiev__slides {
+	display: flex;
+	// height: 260px;
+	overflow: hidden;
+	transition: 3s;
+	position: relative;
+
+	@media @tablet {
+		// height: 220px;
+	}
+
+	@media @desktop {
+		&::before,
+		&::after {
+			content: "";
+			width: 30px;
+			height: 30px;
+			border-top: 2px solid #c6cace;
+			border-left: 2px solid #c6cace;
+			position: absolute;
+			top: 210px;
+		}
+
+		&::before {
+			left: 13%;
+			transform: rotate(-45deg);
+		}
+
+		&::after {
+			right: 13%;
+			transform: rotate(135deg);
+		}
+	}
+}
+
+.rewiev__item {
+	display: flex;
+	flex-direction: column;
+	width: 87%;
+	flex-shrink: 0;
+	padding: 10px 6%;
+	text-align: center;
+	transition: 1s;
+
+	@media @desktop {
+		width: 60%;
+		padding: 185px 20% 10px;
+		background-image: url(../../img/quotes.png);
+		background-repeat: no-repeat;
+		background-position: 50% 65px;
+		background-size: 80px auto;
+	}
+}
+
+.rewiev__title {
+	font-size: 18px;
+	color: @black;
+	font-weight: bold;
+	margin-bottom: 20px;
+
+	@media @tablet {
+		font-size: 20px;
+		order: 2;
+		margin-bottom: 10px;
+	}
+}
+
+.rewiev__description {
+	display: none;
+
+	@media @tablet {
+		display: block;
+		font-size: 14px;
+		order: 3;
+	}
+}
+
+.rewiev__text {
+	font-size: 14px;
+	line-height: 30px;
+
+	@media @tablet {
+		font-size: 18px;
+		order: 1;
+		margin-bottom: 40px;
+	}
+}
+
+// slider controls
+
+.rewiev__controls {
+	width: 200px;
+	height: 10px;
+	margin: 10px auto;
+	text-align: center;
+
+	@media @desktop {
+		display: none;
+	}
+}
+
+.rewiev__controls label {
+	display: inline-block;
+	vertical-align: center;
+	width: 6px;
+	height: 6px;
+	border: 3px solid #fff;
+	background-color: #bec2c7;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+#rewiev-1:checked ~ .rewiev__controls label:nth-child(1),
+#rewiev-2:checked ~ .rewiev__controls label:nth-child(2),
+#rewiev-3:checked ~ .rewiev__controls label:nth-child(3) {
+	border-color: #283645;
+}
+
+#rewiev-1:checked ~ .rewiev__slides .rewiev__item {
+	transform: translateX(0);
+}
+
+#rewiev-2:checked ~ .rewiev__slides .rewiev__item {
+	transform: translateX(-100%);
+}
+
+#rewiev-3:checked ~ .rewiev__slides .rewiev__item {
+	transform: translateX(-200%);
+}
+
+.rewiev input[type=radio] {
+	display: none;
+}
