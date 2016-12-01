@@ -1,5 +1,18 @@
 .rewiev {
-	margin-bottom: 50px;
+	position: relative;
+	overflow: hidden;
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		border-right: 100vw solid #f2f2f2;
+		border-top: 8vw solid transparent;
+		box-sizing: border-box;
+		z-index: -1;
+	}
 }
 
 .rewiev__slides {
@@ -48,7 +61,7 @@
 
 	@media @desktop {
 		width: 60%;
-		padding: 185px 20% 10px;
+		padding: 185px 20% 140px;
 		background-image: url(../../img/quotes.png);
 		background-repeat: no-repeat;
 		background-position: 50% 65px;
@@ -67,6 +80,10 @@
 		order: 2;
 		margin-bottom: 10px;
 	}
+
+	@media @desktop {
+		font-size: 24px;
+	}
 }
 
 .rewiev__description {
@@ -76,6 +93,10 @@
 		display: block;
 		font-size: 14px;
 		order: 3;
+	}
+
+	@media @desktop {
+		font-size: 18px;
 	}
 }
 
@@ -93,25 +114,13 @@
 // slider controls
 
 .rewiev__controls {
-	width: 200px;
-	height: 10px;
-	margin: 10px auto;
-	text-align: center;
+	.controls();
+
+	margin: 10px auto 70px;
 
 	@media @desktop {
 		display: none;
 	}
-}
-
-.rewiev__controls label {
-	display: inline-block;
-	vertical-align: center;
-	width: 6px;
-	height: 6px;
-	border: 3px solid #fff;
-	background-color: #bec2c7;
-	border-radius: 50%;
-	margin-right: 10px;
 }
 
 #rewiev-1:checked ~ .rewiev__controls label:nth-child(1),

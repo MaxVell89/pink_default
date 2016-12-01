@@ -1,0 +1,105 @@
+.price {
+	background-color: @light-grey-bg;
+	padding-top: 50px;
+	padding-bottom: 50px; 
+	overflow: hidden;
+}
+
+.price__table {
+	display: table;
+	border-collapse: collapse;
+	width: 250%;
+  transform: translateX(-30%);
+  transition: 1s;
+}
+
+.price__tr {
+	display: table-row;
+}
+
+.price__td {
+	display: table-cell;
+	border: 2px solid #e5e5e5;
+	padding: 15px;
+	background-color: #fff;
+	text-transform: uppercase;
+	position: relative;
+	overflow: hidden;
+
+	&:first-child {
+		display: none;
+	}
+
+	&--header {
+		background-color: #283645;
+		color: #fff;
+		font-size: 18px;
+		font-weight: bold;
+		text-align: center;
+
+		span {
+			display: block;
+			font-size: 24px;
+			font-weight: 300;
+		}
+	}
+
+	&--hit::before {
+		content: "ХИТ";
+		display: block;
+		color: #fff;
+		font-size: 14px;
+		line-height: 30px;
+		background-color: #d22856;
+		position: absolute;
+		width: 100px;
+		transform: rotate(-45deg);
+		top: 8px;
+		left: -28px;
+	}
+
+		&--yes,
+		&--no  {
+		background-repeat: no-repeat;
+		background-position: 90% 50%;
+	}
+
+	&--yes {
+		background-image: url(../../img/yes.png);
+	}
+
+		&--no {
+		background-image: url(../../img/no.png);
+	}
+}
+
+// PRICE CONTROLS 
+
+#price__base:checked ~ .price__table {
+	transform: translateX(3%);
+}
+
+#price__standard:checked ~ .price__table {
+	transform: translateX(-30%);
+}
+
+#price__unlimit:checked ~ .price__table {
+	transform: translateX(-63%);
+}
+
+.price__controls {
+	.controls();
+
+	margin: 35px auto 10px;
+}
+
+#price__base:checked ~ .price__controls label:nth-child(1),
+#price__standard:checked ~ .price__controls label:nth-child(2),
+#price__unlimit:checked ~ .price__controls label:nth-child(3) {
+	border-color: #283645;
+}
+
+input[name=price] {
+	display: none;
+}
+
