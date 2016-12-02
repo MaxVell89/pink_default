@@ -9,8 +9,11 @@
 	display: table;
 	border-collapse: collapse;
 	width: 250%;
-  transform: translateX(-30%);
   transition: 1s;
+
+  @media @tablet {
+  	width: 87%;
+  }
 }
 
 .price__tr {
@@ -25,11 +28,8 @@
 	text-transform: uppercase;
 	position: relative;
 	overflow: hidden;
-
-	&:first-child {
-		display: none;
-	}
-
+	min-width: 125px;
+	
 	&--header {
 		background-color: #283645;
 		color: #fff;
@@ -37,10 +37,26 @@
 		font-weight: bold;
 		text-align: center;
 
+		@media @tablet {
+			font-size: 16px;
+		}
+
+		@media @desktop {
+			font-size: 18px;
+		}
+
 		span {
 			display: block;
 			font-size: 24px;
 			font-weight: 300;
+
+			@media @tablet {
+			font-size: 18px;
+			}
+
+			@media @desktop {
+			font-size: 24px;
+		}
 		}
 	}
 
@@ -58,18 +74,37 @@
 		left: -28px;
 	}
 
-		&--yes,
-		&--no  {
+	&--yes,
+	&--no  {
 		background-repeat: no-repeat;
 		background-position: 90% 50%;
+
+		@media @tablet {
+			font-size: 0;
+			background-position: 50% 50%;
+		}
 	}
 
 	&--yes {
 		background-image: url(../../img/yes.png);
 	}
 
-		&--no {
+	&--no {
 		background-image: url(../../img/no.png);
+	}
+
+	&:first-child {
+		display: none;
+
+		@media @tablet {
+			display: table-cell;
+			font-size: 14px;
+			text-transform: none;
+		}
+
+		@media @desktop {
+			font-size: 18px;
+		}
 	}
 }
 
@@ -103,3 +138,17 @@ input[name=price] {
 	display: none;
 }
 
+// PRICE CONTROLS FOR TABLET AND DESKTOP -- NONE
+
+@media @tablet {
+	#price__base:checked ~ .price__table,
+	#price__standard:checked ~ .price__table,
+	#price__unlimit:checked ~ .price__table {
+		transform: translateX(0);
+		margin: 0 auto;
+	}
+
+	.price__controls {
+		display: none;
+	}
+}
