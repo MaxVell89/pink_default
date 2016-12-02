@@ -1,0 +1,23 @@
+.map {
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		border-top: 10vw solid #fff;
+		border-left: 50vw solid transparent;
+		border-right: 50vw solid transparent;
+		border-bottom: 35px solid transparent;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+	}
+}
+
+.map iframe {
+	height: 50vw;
+	min-height: 200px;
+	max-height: 500px;
+}
