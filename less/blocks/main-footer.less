@@ -1,0 +1,68 @@
+.main-footer{
+	display: none;
+
+	@media @tablet {
+		width: 87%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 130px;
+	}
+
+	@media @desktop {
+		height: 200px;
+	}
+}
+
+.main-footer__soc-btn {
+
+}
+
+.main-footer__social {
+	display: inline-block;
+	font-size: 0;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	border: 3px solid #e9ebec;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	margin-right: 10px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&--twitter {
+		background-image: url(../../img/twitter-icon.png);
+	}
+
+	&--facebook {
+		background-image: url(../../img/facebook-icon.png);
+	}
+
+	&--youtube {
+		background-image: url(../../img/youtube-icon.png);
+	}
+}
+
+.main-footer__copyright {
+	display: flex;
+	align-items: center;
+	padding-top: 7px;
+
+	div {
+		margin-right: 10px;
+		font-size: 14px;
+		line-height: 18px;
+
+		@media @desktop {
+			font-size: 18px;
+		}
+	}
+
+	img {
+		padding-top: 6px;
+	}
+}
